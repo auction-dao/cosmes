@@ -18,6 +18,7 @@ import {
 } from "../ConnectedWallet";
 import { WalletError } from "../WalletError";
 import { Ethereum } from "./types";
+import { TxRaw } from "cosmes/protobufs/cosmos/tx/v1beta1/tx_pb";
 
 export class MetamaskInjectiveExtension extends ConnectedWallet {
   private readonly ext: Ethereum;
@@ -70,6 +71,16 @@ export class MetamaskInjectiveExtension extends ConnectedWallet {
     accountNumber: bigint,
     sequence: bigint
   ): Promise<string> {
+    const txRaw = await this.sign({ msgs, memo, timeoutHeight }, fee, accountNumber, sequence);
+    return RpcClient.broadcastTx(this.rpc, txRaw);
+  }
+
+  async sign(
+    { msgs, memo = "", timeoutHeight = 1_000_000_000_000_000n }: UnsignedTx,
+    fee: Fee,
+    accountNumber: bigint,
+    sequence: bigint
+  ): Promise<TxRaw> {
     const tx = new Tx({
       chainId: this.chainId,
       pubKey: this.pubKey,
@@ -103,7 +114,8 @@ export class MetamaskInjectiveExtension extends ConnectedWallet {
       timeoutHeight,
       extensionOptions: [new Web3Tx({ typedDataChainID: 1n })],
     });
-    return RpcClient.broadcastTx(this.rpc, txRaw);
+
+    return txRaw;
   }
 
   /**

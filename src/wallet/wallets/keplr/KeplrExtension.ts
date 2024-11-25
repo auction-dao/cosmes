@@ -72,6 +72,17 @@ export class KeplrExtension extends ConnectedWallet {
     accountNumber: bigint,
     sequence: bigint
   ): Promise<string> {
+    const txRaw = await this.sign({ msgs, memo, timeoutHeight }, fee, accountNumber, sequence);
+
+    return RpcClient.broadcastTx(this.rpc, txRaw);
+  }
+
+  async sign(
+    { msgs, memo, timeoutHeight }: UnsignedTx,
+    fee: Fee,
+    accountNumber: bigint,
+    sequence: bigint
+  ): Promise<TxRaw> {
     const tx = new Tx({
       chainId: this.chainId,
       pubKey: this.pubKey,
@@ -98,6 +109,6 @@ export class KeplrExtension extends ConnectedWallet {
       txRaw = tx.toSignedDirect(signed, signature.signature);
     }
 
-    return RpcClient.broadcastTx(this.rpc, txRaw);
+    return txRaw;
   }
 }

@@ -19,6 +19,7 @@ import {
 import type { WalletName } from "../constants/WalletName";
 import type { WalletType } from "../constants/WalletType";
 import { extractExpectedAccountSequence } from "../utils/sequence";
+import { TxRaw } from "cosmes/protobufs/cosmos/tx/v1beta1/tx_pb";
 
 export type UnsignedTx = {
   msgs: Adapter[];
@@ -223,4 +224,15 @@ export abstract class ConnectedWallet {
     accountNumber: bigint,
     sequence: bigint
   ): Promise<string>;
+
+  /**
+   * Signs the given `unsignedTx` without broadcasting   */
+  sign(
+    _unsignedTx: UnsignedTx,
+    _fee: Fee,
+    _accountNumber: bigint,
+    _sequence: bigint
+  ): Promise<TxRaw> {
+    throw new Error("Method not implemented.");
+  };
 }
