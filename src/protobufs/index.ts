@@ -1479,10 +1479,11 @@ export {
 export {
   Action as InjectivePermissionsV1beta1Action,
   Namespace as InjectivePermissionsV1beta1Namespace,
+  AddressRoles as InjectivePermissionsV1beta1AddressRoles,
   Role as InjectivePermissionsV1beta1Role,
-  Roles as InjectivePermissionsV1beta1Roles,
   RoleIDs as InjectivePermissionsV1beta1RoleIDs,
   Voucher as InjectivePermissionsV1beta1Voucher,
+  AddressVoucher as InjectivePermissionsV1beta1AddressVoucher,
 } from "./injective/permissions/v1beta1/permissions_pb.js";
 export {
   Params as InjectivePermissionsV1beta1Params,
@@ -1490,6 +1491,9 @@ export {
 export {
   GenesisState as InjectivePermissionsV1beta1GenesisState,
 } from "./injective/permissions/v1beta1/genesis_pb.js";
+export {
+  EventSetVoucher as InjectivePermissionsV1beta1EventSetVoucher,
+} from "./injective/permissions/v1beta1/events_pb.js";
 export {
   BridgeValidator as InjectivePeggyV1BridgeValidator,
   Valset as InjectivePeggyV1Valset,
@@ -1600,6 +1604,10 @@ export {
   MsgValsetUpdatedClaimResponse as InjectivePeggyV1MsgValsetUpdatedClaimResponse,
   MsgUpdateParams as InjectivePeggyV1MsgUpdateParams,
   MsgUpdateParamsResponse as InjectivePeggyV1MsgUpdateParamsResponse,
+  MsgBlacklistEthereumAddresses as InjectivePeggyV1MsgBlacklistEthereumAddresses,
+  MsgBlacklistEthereumAddressesResponse as InjectivePeggyV1MsgBlacklistEthereumAddressesResponse,
+  MsgRevokeEthereumBlacklist as InjectivePeggyV1MsgRevokeEthereumBlacklist,
+  MsgRevokeEthereumBlacklistResponse as InjectivePeggyV1MsgRevokeEthereumBlacklistResponse,
 } from "./injective/peggy/v1/msgs_pb.js";
 export {
   MsgValsetConfirmService as InjectivePeggyV1MsgValsetConfirmService,
@@ -1614,6 +1622,8 @@ export {
   MsgCancelSendToEthService as InjectivePeggyV1MsgCancelSendToEthService,
   MsgSubmitBadSignatureEvidenceService as InjectivePeggyV1MsgSubmitBadSignatureEvidenceService,
   MsgUpdateParamsService as InjectivePeggyV1MsgUpdateParamsService,
+  MsgBlacklistEthereumAddressesService as InjectivePeggyV1MsgBlacklistEthereumAddressesService,
+  MsgRevokeEthereumBlacklistService as InjectivePeggyV1MsgRevokeEthereumBlacklistService,
 } from "./injective/peggy/v1/msgs_cosmes.js";
 export {
   GenesisState as InjectivePeggyV1GenesisState,
@@ -1658,6 +1668,8 @@ export {
   MsgRelayBandRatesResponse as InjectiveOracleV1beta1MsgRelayBandRatesResponse,
   MsgRelayCoinbaseMessages as InjectiveOracleV1beta1MsgRelayCoinbaseMessages,
   MsgRelayCoinbaseMessagesResponse as InjectiveOracleV1beta1MsgRelayCoinbaseMessagesResponse,
+  MsgRelayStorkPrices as InjectiveOracleV1beta1MsgRelayStorkPrices,
+  MsgRelayStorkPricesResponse as InjectiveOracleV1beta1MsgRelayStorkPricesResponse,
   MsgRequestBandIBCRates as InjectiveOracleV1beta1MsgRequestBandIBCRates,
   MsgRequestBandIBCRatesResponse as InjectiveOracleV1beta1MsgRequestBandIBCRatesResponse,
   MsgRelayPythPrices as InjectiveOracleV1beta1MsgRelayPythPrices,
@@ -1671,6 +1683,7 @@ export {
   MsgRelayBandRatesService as InjectiveOracleV1beta1MsgRelayBandRatesService,
   MsgRequestBandIBCRatesService as InjectiveOracleV1beta1MsgRequestBandIBCRatesService,
   MsgRelayCoinbaseMessagesService as InjectiveOracleV1beta1MsgRelayCoinbaseMessagesService,
+  MsgRelayStorkMessageService as InjectiveOracleV1beta1MsgRelayStorkMessageService,
   MsgRelayPythPricesService as InjectiveOracleV1beta1MsgRelayPythPricesService,
   MsgUpdateParamsService as InjectiveOracleV1beta1MsgUpdateParamsService,
 } from "./injective/oracle/v1beta1/tx_cosmes.js";
@@ -1691,6 +1704,10 @@ export {
   QueryCoinbasePriceStatesResponse as InjectiveOracleV1beta1QueryCoinbasePriceStatesResponse,
   QueryPythPriceStatesRequest as InjectiveOracleV1beta1QueryPythPriceStatesRequest,
   QueryPythPriceStatesResponse as InjectiveOracleV1beta1QueryPythPriceStatesResponse,
+  QueryStorkPriceStatesRequest as InjectiveOracleV1beta1QueryStorkPriceStatesRequest,
+  QueryStorkPriceStatesResponse as InjectiveOracleV1beta1QueryStorkPriceStatesResponse,
+  QueryStorkPublishersRequest as InjectiveOracleV1beta1QueryStorkPublishersRequest,
+  QueryStorkPublishersResponse as InjectiveOracleV1beta1QueryStorkPublishersResponse,
   QueryProviderPriceStateRequest as InjectiveOracleV1beta1QueryProviderPriceStateRequest,
   QueryProviderPriceStateResponse as InjectiveOracleV1beta1QueryProviderPriceStateResponse,
   QueryModuleStateRequest as InjectiveOracleV1beta1QueryModuleStateRequest,
@@ -1704,6 +1721,7 @@ export {
   QueryOracleProvidersInfoResponse as InjectiveOracleV1beta1QueryOracleProvidersInfoResponse,
   QueryOracleProviderPricesRequest as InjectiveOracleV1beta1QueryOracleProviderPricesRequest,
   QueryOracleProviderPricesResponse as InjectiveOracleV1beta1QueryOracleProviderPricesResponse,
+  ScalingOptions as InjectiveOracleV1beta1ScalingOptions,
   QueryOraclePriceRequest as InjectiveOracleV1beta1QueryOraclePriceRequest,
   PricePairState as InjectiveOracleV1beta1PricePairState,
   QueryOraclePriceResponse as InjectiveOracleV1beta1QueryOraclePriceResponse,
@@ -1716,6 +1734,8 @@ export {
   QueryPriceFeedPriceStatesService as InjectiveOracleV1beta1QueryPriceFeedPriceStatesService,
   QueryCoinbasePriceStatesService as InjectiveOracleV1beta1QueryCoinbasePriceStatesService,
   QueryPythPriceStatesService as InjectiveOracleV1beta1QueryPythPriceStatesService,
+  QueryStorkPriceStatesService as InjectiveOracleV1beta1QueryStorkPriceStatesService,
+  QueryStorkPublishersService as InjectiveOracleV1beta1QueryStorkPublishersService,
   QueryProviderPriceStateService as InjectiveOracleV1beta1QueryProviderPriceStateService,
   QueryOracleModuleStateService as InjectiveOracleV1beta1QueryOracleModuleStateService,
   QueryHistoricalPriceRecordsService as InjectiveOracleV1beta1QueryHistoricalPriceRecordsService,
@@ -1735,6 +1755,8 @@ export {
   AuthorizeBandOracleRequestProposal as InjectiveOracleV1beta1AuthorizeBandOracleRequestProposal,
   UpdateBandOracleRequestProposal as InjectiveOracleV1beta1UpdateBandOracleRequestProposal,
   EnableBandIBCProposal as InjectiveOracleV1beta1EnableBandIBCProposal,
+  GrantStorkPublisherPrivilegeProposal as InjectiveOracleV1beta1GrantStorkPublisherPrivilegeProposal,
+  RevokeStorkPublisherPrivilegeProposal as InjectiveOracleV1beta1RevokeStorkPublisherPrivilegeProposal,
 } from "./injective/oracle/v1beta1/proposal_pb.js";
 export {
   OracleType as InjectiveOracleV1beta1OracleType,
@@ -1749,6 +1771,7 @@ export {
   PriceFeedInfo as InjectiveOracleV1beta1PriceFeedInfo,
   PriceFeedPrice as InjectiveOracleV1beta1PriceFeedPrice,
   CoinbasePriceState as InjectiveOracleV1beta1CoinbasePriceState,
+  StorkPriceState as InjectiveOracleV1beta1StorkPriceState,
   PriceState as InjectiveOracleV1beta1PriceState,
   PythPriceState as InjectiveOracleV1beta1PythPriceState,
   BandOracleRequest as InjectiveOracleV1beta1BandOracleRequest,
@@ -1759,6 +1782,8 @@ export {
   PriceRecord as InjectiveOracleV1beta1PriceRecord,
   MetadataStatistics as InjectiveOracleV1beta1MetadataStatistics,
   PriceAttestation as InjectiveOracleV1beta1PriceAttestation,
+  AssetPair as InjectiveOracleV1beta1AssetPair,
+  SignedPriceOfAssetPair as InjectiveOracleV1beta1SignedPriceOfAssetPair,
 } from "./injective/oracle/v1beta1/oracle_pb.js";
 export {
   GenesisState as InjectiveOracleV1beta1GenesisState,
@@ -1774,6 +1799,7 @@ export {
   SetPriceFeedPriceEvent as InjectiveOracleV1beta1SetPriceFeedPriceEvent,
   SetProviderPriceEvent as InjectiveOracleV1beta1SetProviderPriceEvent,
   SetCoinbasePriceEvent as InjectiveOracleV1beta1SetCoinbasePriceEvent,
+  EventSetStorkPrices as InjectiveOracleV1beta1EventSetStorkPrices,
   EventSetPythPrices as InjectiveOracleV1beta1EventSetPythPrices,
 } from "./injective/oracle/v1beta1/events_pb.js";
 export {
@@ -1919,6 +1945,10 @@ export {
   EventInsuranceWithdraw as InjectiveInsuranceV1beta1EventInsuranceWithdraw,
 } from "./injective/insurance/v1beta1/events_pb.js";
 export {
+  MsgUpdateSpotMarket as InjectiveExchangeV1beta1MsgUpdateSpotMarket,
+  MsgUpdateSpotMarketResponse as InjectiveExchangeV1beta1MsgUpdateSpotMarketResponse,
+  MsgUpdateDerivativeMarket as InjectiveExchangeV1beta1MsgUpdateDerivativeMarket,
+  MsgUpdateDerivativeMarketResponse as InjectiveExchangeV1beta1MsgUpdateDerivativeMarketResponse,
   MsgUpdateParams as InjectiveExchangeV1beta1MsgUpdateParams,
   MsgUpdateParamsResponse as InjectiveExchangeV1beta1MsgUpdateParamsResponse,
   MsgDeposit as InjectiveExchangeV1beta1MsgDeposit,
@@ -1976,6 +2006,8 @@ export {
   MsgEmergencySettleMarketResponse as InjectiveExchangeV1beta1MsgEmergencySettleMarketResponse,
   MsgIncreasePositionMargin as InjectiveExchangeV1beta1MsgIncreasePositionMargin,
   MsgIncreasePositionMarginResponse as InjectiveExchangeV1beta1MsgIncreasePositionMarginResponse,
+  MsgDecreasePositionMargin as InjectiveExchangeV1beta1MsgDecreasePositionMargin,
+  MsgDecreasePositionMarginResponse as InjectiveExchangeV1beta1MsgDecreasePositionMarginResponse,
   MsgPrivilegedExecuteContract as InjectiveExchangeV1beta1MsgPrivilegedExecuteContract,
   MsgPrivilegedExecuteContractResponse as InjectiveExchangeV1beta1MsgPrivilegedExecuteContractResponse,
   MsgRewardsOptOut as InjectiveExchangeV1beta1MsgRewardsOptOut,
@@ -1986,6 +2018,10 @@ export {
   MsgSignDoc as InjectiveExchangeV1beta1MsgSignDoc,
   MsgAdminUpdateBinaryOptionsMarket as InjectiveExchangeV1beta1MsgAdminUpdateBinaryOptionsMarket,
   MsgAdminUpdateBinaryOptionsMarketResponse as InjectiveExchangeV1beta1MsgAdminUpdateBinaryOptionsMarketResponse,
+  MsgAuthorizeStakeGrants as InjectiveExchangeV1beta1MsgAuthorizeStakeGrants,
+  MsgAuthorizeStakeGrantsResponse as InjectiveExchangeV1beta1MsgAuthorizeStakeGrantsResponse,
+  MsgActivateStakeGrant as InjectiveExchangeV1beta1MsgActivateStakeGrant,
+  MsgActivateStakeGrantResponse as InjectiveExchangeV1beta1MsgActivateStakeGrantResponse,
 } from "./injective/exchange/v1beta1/tx_pb.js";
 export {
   MsgDepositService as InjectiveExchangeV1beta1MsgDepositService,
@@ -2015,10 +2051,14 @@ export {
   MsgLiquidatePositionService as InjectiveExchangeV1beta1MsgLiquidatePositionService,
   MsgEmergencySettleMarketService as InjectiveExchangeV1beta1MsgEmergencySettleMarketService,
   MsgIncreasePositionMarginService as InjectiveExchangeV1beta1MsgIncreasePositionMarginService,
+  MsgDecreasePositionMarginService as InjectiveExchangeV1beta1MsgDecreasePositionMarginService,
   MsgRewardsOptOutService as InjectiveExchangeV1beta1MsgRewardsOptOutService,
   MsgAdminUpdateBinaryOptionsMarketService as InjectiveExchangeV1beta1MsgAdminUpdateBinaryOptionsMarketService,
-  MsgReclaimLockedFundsService as InjectiveExchangeV1beta1MsgReclaimLockedFundsService,
   MsgUpdateParamsService as InjectiveExchangeV1beta1MsgUpdateParamsService,
+  MsgUpdateSpotMarketService as InjectiveExchangeV1beta1MsgUpdateSpotMarketService,
+  MsgUpdateDerivativeMarketService as InjectiveExchangeV1beta1MsgUpdateDerivativeMarketService,
+  MsgAuthorizeStakeGrantsService as InjectiveExchangeV1beta1MsgAuthorizeStakeGrantsService,
+  MsgActivateStakeGrantService as InjectiveExchangeV1beta1MsgActivateStakeGrantService,
 } from "./injective/exchange/v1beta1/tx_cosmes.js";
 export {
   OrderSide as InjectiveExchangeV1beta1OrderSide,
@@ -2147,6 +2187,12 @@ export {
   QueryTraderDerivativeConditionalOrdersResponse as InjectiveExchangeV1beta1QueryTraderDerivativeConditionalOrdersResponse,
   QueryMarketAtomicExecutionFeeMultiplierRequest as InjectiveExchangeV1beta1QueryMarketAtomicExecutionFeeMultiplierRequest,
   QueryMarketAtomicExecutionFeeMultiplierResponse as InjectiveExchangeV1beta1QueryMarketAtomicExecutionFeeMultiplierResponse,
+  QueryActiveStakeGrantRequest as InjectiveExchangeV1beta1QueryActiveStakeGrantRequest,
+  QueryActiveStakeGrantResponse as InjectiveExchangeV1beta1QueryActiveStakeGrantResponse,
+  QueryGrantAuthorizationRequest as InjectiveExchangeV1beta1QueryGrantAuthorizationRequest,
+  QueryGrantAuthorizationResponse as InjectiveExchangeV1beta1QueryGrantAuthorizationResponse,
+  QueryGrantAuthorizationsRequest as InjectiveExchangeV1beta1QueryGrantAuthorizationsRequest,
+  QueryGrantAuthorizationsResponse as InjectiveExchangeV1beta1QueryGrantAuthorizationsResponse,
 } from "./injective/exchange/v1beta1/query_pb.js";
 export {
   QueryQueryExchangeParamsService as InjectiveExchangeV1beta1QueryQueryExchangeParamsService,
@@ -2206,6 +2252,9 @@ export {
   QueryBinaryOptionsMarketsService as InjectiveExchangeV1beta1QueryBinaryOptionsMarketsService,
   QueryTraderDerivativeConditionalOrdersService as InjectiveExchangeV1beta1QueryTraderDerivativeConditionalOrdersService,
   QueryMarketAtomicExecutionFeeMultiplierService as InjectiveExchangeV1beta1QueryMarketAtomicExecutionFeeMultiplierService,
+  QueryActiveStakeGrantService as InjectiveExchangeV1beta1QueryActiveStakeGrantService,
+  QueryGrantAuthorizationService as InjectiveExchangeV1beta1QueryGrantAuthorizationService,
+  QueryGrantAuthorizationsService as InjectiveExchangeV1beta1QueryGrantAuthorizationsService,
 } from "./injective/exchange/v1beta1/query_cosmes.js";
 export {
   ExchangeType as InjectiveExchangeV1beta1ExchangeType,
@@ -2217,6 +2266,7 @@ export {
   BinaryOptionsMarketLaunchProposal as InjectiveExchangeV1beta1BinaryOptionsMarketLaunchProposal,
   ExpiryFuturesMarketLaunchProposal as InjectiveExchangeV1beta1ExpiryFuturesMarketLaunchProposal,
   DerivativeMarketParamUpdateProposal as InjectiveExchangeV1beta1DerivativeMarketParamUpdateProposal,
+  AdminInfo as InjectiveExchangeV1beta1AdminInfo,
   MarketForcedSettlementProposal as InjectiveExchangeV1beta1MarketForcedSettlementProposal,
   UpdateDenomDecimalsProposal as InjectiveExchangeV1beta1UpdateDenomDecimalsProposal,
   BinaryOptionsMarketParamUpdateProposal as InjectiveExchangeV1beta1BinaryOptionsMarketParamUpdateProposal,
@@ -2246,6 +2296,8 @@ export {
   SubaccountNonce as InjectiveExchangeV1beta1SubaccountNonce,
   ExpiryFuturesMarketInfoState as InjectiveExchangeV1beta1ExpiryFuturesMarketInfoState,
   PerpetualMarketFundingState as InjectiveExchangeV1beta1PerpetualMarketFundingState,
+  FullGrantAuthorizations as InjectiveExchangeV1beta1FullGrantAuthorizations,
+  FullActiveGrant as InjectiveExchangeV1beta1FullActiveGrant,
 } from "./injective/exchange/v1beta1/genesis_pb.js";
 export {
   AtomicMarketOrderAccessLevel as InjectiveExchangeV1beta1AtomicMarketOrderAccessLevel,
@@ -2301,6 +2353,9 @@ export {
   AggregateAccountVolumeRecord as InjectiveExchangeV1beta1AggregateAccountVolumeRecord,
   MarketVolume as InjectiveExchangeV1beta1MarketVolume,
   DenomDecimals as InjectiveExchangeV1beta1DenomDecimals,
+  GrantAuthorization as InjectiveExchangeV1beta1GrantAuthorization,
+  ActiveGrant as InjectiveExchangeV1beta1ActiveGrant,
+  EffectiveGrant as InjectiveExchangeV1beta1EffectiveGrant,
 } from "./injective/exchange/v1beta1/exchange_pb.js";
 export {
   EventBatchSpotExecution as InjectiveExchangeV1beta1EventBatchSpotExecution,
@@ -2335,6 +2390,10 @@ export {
   EventOrderbookUpdate as InjectiveExchangeV1beta1EventOrderbookUpdate,
   OrderbookUpdate as InjectiveExchangeV1beta1OrderbookUpdate,
   Orderbook as InjectiveExchangeV1beta1Orderbook,
+  EventGrantAuthorizations as InjectiveExchangeV1beta1EventGrantAuthorizations,
+  EventGrantActivation as InjectiveExchangeV1beta1EventGrantActivation,
+  EventInvalidGrant as InjectiveExchangeV1beta1EventInvalidGrant,
+  EventOrderCancelFail as InjectiveExchangeV1beta1EventOrderCancelFail,
 } from "./injective/exchange/v1beta1/events_pb.js";
 export {
   CreateSpotLimitOrderAuthz as InjectiveExchangeV1beta1CreateSpotLimitOrderAuthz,
@@ -2370,11 +2429,14 @@ export {
   QueryCurrentAuctionBasketResponse as InjectiveAuctionV1beta1QueryCurrentAuctionBasketResponse,
   QueryModuleStateRequest as InjectiveAuctionV1beta1QueryModuleStateRequest,
   QueryModuleStateResponse as InjectiveAuctionV1beta1QueryModuleStateResponse,
+  QueryLastAuctionResultRequest as InjectiveAuctionV1beta1QueryLastAuctionResultRequest,
+  QueryLastAuctionResultResponse as InjectiveAuctionV1beta1QueryLastAuctionResultResponse,
 } from "./injective/auction/v1beta1/query_pb.js";
 export {
   QueryAuctionParamsService as InjectiveAuctionV1beta1QueryAuctionParamsService,
   QueryCurrentAuctionBasketService as InjectiveAuctionV1beta1QueryCurrentAuctionBasketService,
   QueryAuctionModuleStateService as InjectiveAuctionV1beta1QueryAuctionModuleStateService,
+  QueryLastAuctionResultService as InjectiveAuctionV1beta1QueryLastAuctionResultService,
 } from "./injective/auction/v1beta1/query_cosmes.js";
 export {
   GenesisState as InjectiveAuctionV1beta1GenesisState,
@@ -2382,6 +2444,7 @@ export {
 export {
   Params as InjectiveAuctionV1beta1Params,
   Bid as InjectiveAuctionV1beta1Bid,
+  LastAuctionResult as InjectiveAuctionV1beta1LastAuctionResult,
   EventBid as InjectiveAuctionV1beta1EventBid,
   EventAuctionResult as InjectiveAuctionV1beta1EventAuctionResult,
   EventAuctionStart as InjectiveAuctionV1beta1EventAuctionStart,
