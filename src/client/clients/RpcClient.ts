@@ -115,11 +115,12 @@ export class RpcClient {
    */
   public static async broadcastTx(
     endpoint: string,
-    txRaw: TxRaw
+    txRaw: TxRaw,
+    method:  'broadcast_tx_sync' | 'broadcast_tx_async'= "broadcast_tx_sync"
   ): Promise<string> {
     const { code, log, hash } = await this.doRequest<BroadcastTxResult>(
       endpoint,
-      "broadcast_tx_sync",
+      method,
       {
         tx: base64.encode(txRaw.toBinary()),
       }
